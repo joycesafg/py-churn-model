@@ -1,0 +1,33 @@
+artifact_path: model
+flavors:
+  python_function:
+    data: model.xgb
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.12.5
+  xgboost:
+    code: null
+    data: model.xgb
+    model_class: xgboost.sklearn.XGBClassifier
+    model_format: xgb
+    xgb_version: 2.1.1
+mlflow_version: 2.14.0rc0
+model_size_bytes: 251737
+model_uuid: f1363995b7ff49e7a4dddf88e437d2b8
+run_id: 629006b8e630475f98b6c1a5f0dc7143
+signature:
+  inputs: '[{"type": "long", "name": "var4_ordered", "required": true}, {"type": "long",
+    "name": "var15", "required": true}, {"type": "double", "name": "imp_op_var41_efect_ult1",
+    "required": true}, {"type": "long", "name": "ind_var30", "required": true}, {"type":
+    "long", "name": "ind_var39_0", "required": true}, {"type": "long", "name": "num_var30_0",
+    "required": true}, {"type": "long", "name": "num_var30", "required": true}, {"type":
+    "long", "name": "num_var39_0", "required": true}, {"type": "double", "name": "saldo_var30",
+    "required": true}, {"type": "long", "name": "num_meses_var5_ult3", "required":
+    true}, {"type": "long", "name": "num_var45_hace3", "required": true}, {"type":
+    "long", "name": "num_var45_ult3", "required": true}, {"type": "long", "name":
+    "zero_info", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int32", "shape": [-1]}}]'
+  params: null
+utc_time_created: '2024-08-16 19:58:20.943120'

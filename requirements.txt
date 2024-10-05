@@ -1,0 +1,9 @@
+uvicorn
+fastapi
+xgboost
+pymongo
+python-dotenv
+joblib
+pandas
+python-multipart
+jinja2
