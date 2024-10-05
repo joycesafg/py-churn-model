@@ -4,8 +4,11 @@
 
 **O objetivo do modelo é maximizar o lucro em ações de retenção a partir da identificação de clientes que possam vir a se disvincular da marca. A correta classificação dos clientes churn e a atuação em cima desses clientes implica num lucro de R$90.00, enquanto a classificação indevida implica no prejuízo de R$10.00.**
 
+Por facilidade mantive todo o código de desenvolvimento do modelo, ingestão dos dados no mongo e aplicativo na branch de **develop**. Na branch main tem apenas a aplicação final utilizando o modelo. Na **develop** tem tudo.
 
 **Abaixo está a estrutura de pastas do projeto e uma breve explicação de cada uma:**
+
+
 
 A aplicação para teste encontra-se em: 
 https://casedm-api-4ac2947f17e5.herokuapp.com/
