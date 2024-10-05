@@ -49,3 +49,7 @@ DataMaster_Case/
 
 - **tests/**: Scripts de teste para garantir a qualidade e a funcionalidade do código.
 
+
+# Arquitetura utilizada
+
+![Architecture Diagram](bronzesilvergold.png)
