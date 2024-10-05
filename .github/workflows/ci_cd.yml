@@ -50,5 +50,5 @@ jobs:
           MONGO_USER: ${{ secrets.MONGO_USER }}
           MONGO_PASS: ${{ secrets.MONGO_PASS }}
 
-      - name: Show docker image size
+      - name: Show Docker image size
         run: docker images py-churn-app-model
