@@ -74,7 +74,7 @@ model = load_model(model_path)
 def get_model(df):
     prediction = model.predict_proba(df)
     print(prediction[:, 1])
-    return 1 if prediction[:, 1] >= 0.006 else 0
+    return 1 if prediction[:, 1] >= 0.1 else 0
 
 
 # Inicia o FastAPI
