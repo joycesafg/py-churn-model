@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request, Form
+from fastapi import FastAPI, Request, Form, BackgroundTasks
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 from dotenv import load_dotenv
@@ -7,6 +7,8 @@ from pymongo import MongoClient
 import joblib
 import pandas as pd
 import os
+from datetime import datetime
+
 
 # Carregar variáveis de ambiente
 load_dotenv()
@@ -16,7 +18,7 @@ templates = Jinja2Templates(directory="templates")
 
 
 # Conectar ao MongoDB
-def connect():
+def connect(collection_name):
     """
     Establishes a connection to a MongoDB database and returns a collection object.
     This function retrieves MongoDB credentials from environment variables, constructs
@@ -40,7 +42,7 @@ def connect():
 
     # Conexão com o banco de dados
     db = client.get_database("ML_db")
-    model_collection = db.get_collection("credit_risk_features_input")
+    model_collection = db.get_collection(collection_name)
 
     try:
         client.admin.command("ping")
@@ -49,6 +51,11 @@ def connect():
         print(e)
 
     return model_collection
+
+
+def save_to_mongo(data, collection_name):
+    collection = connect(collection_name)
+    collection.insert_one(data)
 
 
 # Carregar o modelo
@@ -86,7 +93,7 @@ class PredictionOutput(BaseModel):
 
 
 # Cria a conexão com o banco de dados
-model_collection = connect()
+model_collection = connect("credit_risk_features_input")
 
 
 # Rota para obter o predction
@@ -96,7 +103,11 @@ async def read_form(request: Request):
 
 
 @app.post("/predict")
-async def predict(request: Request, id: int = Form(...)):
+async def predict(
+    request: Request,
+    background_tasks: BackgroundTasks,
+    id: int = Form(...),
+):
 
     document = model_collection.find_one({"_id": id})
 
@@ -109,7 +120,12 @@ async def predict(request: Request, id: int = Form(...)):
 
         prediction = get_model(df)
 
-    json_return = {"_id": str(id), "aplica_promo": str(prediction)}
+    json_return = {
+        "_id": str(id),
+        "aplica_promo": str(prediction),
+        "processing_time": datetime.now().isoformat(),
+    }
+    background_tasks.add_task(save_to_mongo, json_return, "output_churn_model")
 
     return templates.TemplateResponse(
         "front.html", {"request": request, "result": json_return}
