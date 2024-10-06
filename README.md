@@ -11,7 +11,7 @@ Por facilidade mantive todo o código de desenvolvimento do modelo, ingestão do
 
 
 # Aplicação: 
-https://py-churn-app-model-75dda4af3bc2.herokuapp.com/predict
+https://py-churn-app-model-75dda4af3bc2.herokuapp.com/
 
 OBS: O ID do cliente deve ser um Inteiro [0..inf]
 
