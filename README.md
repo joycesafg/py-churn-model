@@ -59,11 +59,12 @@ DataMaster_Case/
 
 1.  Jupyter Notebook + Mlflow hospedado no dagshub para treinamento, rastreio, avaliação e versionamento dos modelos.
 2.  Docker + Github para empacotamento, teste e deploy automático da aplicação no Heroku.
-3. Mongo para feature table que alimenta o modelo da aplicação.
+3. MongoDB para feature table que alimenta o modelo e para salvar os dados de saída da aplicação.
 4. OpenMetaData para governança da feature table
 4. Elastic Search + Kibana + arize para monitoramento, tanto para acompanhamento da saúde da aplicação como para avaliação da estabilidade e desempenho do modelo.
 5. Airflow para orquestração do ELT que vai alimentar a feature table
 6. Heorku como Plataforma para deploy de aplicação
+7. MongoCharts para acompanhamento analítico da aplicação : O dashboard pode ser acessado através de https://charts.mongodb.com/charts-project-0-ycudizl/public/dashboards/6702fe80-5b8a-4f70-8cb0-2e16355874c0 
 
 # Instruções de reproducibilidade
 
