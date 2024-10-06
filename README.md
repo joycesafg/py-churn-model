@@ -10,11 +10,12 @@ Por facilidade mantive todo o código de desenvolvimento do modelo, ingestão do
 
 
 
-A aplicação para teste encontra-se em: 
+# Aplicação: 
 https://py-churn-app-model-75dda4af3bc2.herokuapp.com/predict
 
 OBS: O ID do cliente deve ser um Inteiro [0..inf]
 
+# Estrutura do projeto: 
 ```
 DataMaster_Case/
 ├───.github
@@ -64,26 +65,26 @@ DataMaster_Case/
 5. Airflow para orquestração do ELT que vai alimentar a feature table
 6. Heorku como Plataforma para deploy de aplicação
 
-# Reproducibility Instructions
+# Instruções de reproducibilidade
 
-## Prerequisites
+## Pre-requisitos
 
-1. **Install Python**: Ensure you have Python installed. You can download it from [python.org](https://www.python.org/).
+1. **Install Python**: Certifique-se de que o Python está instalado. Você pode baixá-lo em [python.org](https://www.python.org/).
 
-2. **Clone the Repository**:
+2. **Clone o repositório**:
     ```sh
     git clone https://github.com/joycesafg/py-churn-model.git
     cd py-churn-model
     ```
 
-## Setting Up the Environment
+## Configuração do ambiente
 
-1. **Create a Virtual Environment**:
+1. **Crie um Virtual Environment**:
     ```sh
     python -m venv venv
     ```
 
-2. **Activate the Virtual Environment**:
+2. **Ative o Virtual Environment**:
     - On Windows:
         ```sh
         .\venv\Scripts\activate
@@ -93,27 +94,29 @@ DataMaster_Case/
         source venv/bin/activate
         ```
 
-3. **Install Dependencies**:
+3. **Instale as dependencias**:
     ```sh
     pip install -r requirements.txt
     ```
 
-4. **Set Up Environment Variables**:
-    - Create a `.env` file in the root directory of the project.
-    - Add your MongoDB credentials to the `.env` file:
+4. **COnfiguração das variáeveis de ambiente**:
+    
+    - Crie um arquivo .env no diretório raiz do projeto.
+    - Adicione suas credenciais do MongoDB ao arquivo .env:
       ```env
       MONGO_URI=mongodb+srv://username:password@cluster0.mongodb.net/mydatabase?retryWrites=true&w=majority
       ```
 
-## Running the API
+## Executando a API
 
-1. **Run the API**:
+1. **Execute API**:
     ```sh
     uvircorn --reload main:app
     ```
 
-## Additional Information
+## Informações Adicionais
+- **Documentaão da API**: https://py-churn-app-model-75dda4af3bc2.herokuapp.com/docs#/
 
-- **Data**: Ensure that the data required for the project is placed in the appropriate directory as specified in the project structure.
-- **Configuration**: Modify any configuration files as needed to match your environment.
+- **Dados**: Certifique-se de que os dados necessários para o projeto estão colocados no diretório apropriado, conforme especificado na estrutura do projeto.
+- **Configuração**: Modifique os arquivos de configuração conforme necessário para corresponder ao seu ambiente.
 
