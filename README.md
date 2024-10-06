@@ -15,6 +15,7 @@ https://py-churn-app-model-75dda4af3bc2.herokuapp.com/predict
 
 OBS: O ID do cliente deve ser um Inteiro [0..inf]
 
+# Estrutura do projeto: 
 ```
 DataMaster_Case/
 ├───.github
