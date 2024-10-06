@@ -1,6 +1,6 @@
+# Objetivo do Projeto
 
-
-**Este projeto representa o processo de desenvolvimento de um modelo de machine learning para identificar clientes insatisfeitos e evitar churn. Ele inclui a preparação dos dados, a definição de funções de apoio, a configuração do MLflow para tracking e versionamento, treinamento, avaliação do modelo e deploy do modelo.**
+**Este projeto representa o processo de desenvolvimento de um modelo de machine learning para identificar clientes insatisfeitos e evitar churn. Ele inclui a preparação dos dados, a definição de funções de apoio, a configuração do MLflow para tracking e versionamento, treinamento, avaliação do modelo e deploy do modelo. O modelo foi treinado utilizando um conjunto de dados de clientes e implementado em uma API FastAPI, hospedada no Heroku.**
 
 **O objetivo do modelo é maximizar o lucro em ações de retenção a partir da identificação de clientes que possam vir a se disvincular da marca. A correta classificação dos clientes churn e a atuação em cima desses clientes implica num lucro de R$90.00, enquanto a classificação indevida implica no prejuízo de R$10.00.**
 
@@ -53,3 +53,14 @@ DataMaster_Case/
 # Arquitetura utilizada
 
 ![Architecture Diagram](bronzesilvergold.png)
+
+# Overview das ferramentas utilizadas
+
+1.  Jupyter Notebook + Mlflow hospedado no dagshub para treinamento, rastreio, avaliação e versionamento dos modelos.
+2.  Docker + Github para empacotamento, teste e deploy automático da aplicação no Heroku.
+3. Mongo para feature table que alimenta o modelo da aplicação.
+4. OpenMetaData para governança da feature table
+4. Elastic Search + Kibana + arize para monitoramento, tanto para acompanhamento da saúde da aplicação como para avaliação da estabilidade e desempenho do modelo.
+5. Airflow para orquestração do ELT que vai alimentar a feature table
+6. Heorku como Plataforma para deploy de aplicação
+
