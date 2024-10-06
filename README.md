@@ -117,6 +117,3 @@ DataMaster_Case/
 - **Data**: Ensure that the data required for the project is placed in the appropriate directory as specified in the project structure.
 - **Configuration**: Modify any configuration files as needed to match your environment.
 
-## Troubleshooting
-
-- If you encounter any issues, please refer to the [Issues](https://github.com/yourusername/your-repo/issues) section of the repository or contact the maintainers.
