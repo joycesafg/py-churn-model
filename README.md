@@ -10,7 +10,7 @@ Por facilidade mantive todo o código de desenvolvimento do modelo, ingestão do
 
 
 
-A aplicação para teste encontra-se em: 
+# Aplicação: 
 https://py-churn-app-model-75dda4af3bc2.herokuapp.com/predict
 
 OBS: O ID do cliente deve ser um Inteiro [0..inf]
@@ -114,6 +114,7 @@ DataMaster_Case/
     ```
 
 ## Informações Adicionais
+- **Documentaão da API**: https://py-churn-app-model-75dda4af3bc2.herokuapp.com/docs#/
 
 - **Dados**: Certifique-se de que os dados necessários para o projeto estão colocados no diretório apropriado, conforme especificado na estrutura do projeto.
 - **Configuração**: Modifique os arquivos de configuração conforme necessário para corresponder ao seu ambiente.
