@@ -64,3 +64,59 @@ DataMaster_Case/
 5. Airflow para orquestração do ELT que vai alimentar a feature table
 6. Heorku como Plataforma para deploy de aplicação
 
+# Reproducibility Instructions
+
+## Prerequisites
+
+1. **Install Python**: Ensure you have Python installed. You can download it from [python.org](https://www.python.org/).
+
+2. **Clone the Repository**:
+    ```sh
+    git clone https://github.com/joycesafg/py-churn-model.git
+    cd py-churn-model
+    ```
+
+## Setting Up the Environment
+
+1. **Create a Virtual Environment**:
+    ```sh
+    python -m venv venv
+    ```
+
+2. **Activate the Virtual Environment**:
+    - On Windows:
+        ```sh
+        .\venv\Scripts\activate
+        ```
+    - On macOS and Linux:
+        ```sh
+        source venv/bin/activate
+        ```
+
+3. **Install Dependencies**:
+    ```sh
+    pip install -r requirements.txt
+    ```
+
+4. **Set Up Environment Variables**:
+    - Create a `.env` file in the root directory of the project.
+    - Add your MongoDB credentials to the `.env` file:
+      ```env
+      MONGO_URI=mongodb+srv://username:password@cluster0.mongodb.net/mydatabase?retryWrites=true&w=majority
+      ```
+
+## Running the API
+
+1. **Run the API**:
+    ```sh
+    uvircorn --reload main:app
+    ```
+
+## Additional Information
+
+- **Data**: Ensure that the data required for the project is placed in the appropriate directory as specified in the project structure.
+- **Configuration**: Modify any configuration files as needed to match your environment.
+
+## Troubleshooting
+
+- If you encounter any issues, please refer to the [Issues](https://github.com/yourusername/your-repo/issues) section of the repository or contact the maintainers.

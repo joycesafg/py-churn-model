@@ -1,0 +1,3 @@
+[flake8]
+max-line-length = 130
+exclude = .git,__pycache__,venv,app/download_mlflow_model,app/templates,app/tests
