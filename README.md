@@ -14,6 +14,7 @@ Por facilidade mantive todo o código de desenvolvimento do modelo, ingestão do
 https://py-churn-app-model-75dda4af3bc2.herokuapp.com/
 
 OBS: O ID do cliente deve ser um Inteiro [0..inf]
+Retornos: 0, 1, Not found (Acontece quando o modelo não se aplica ao cliente).
 
 # Estrutura do projeto: 
 ```
